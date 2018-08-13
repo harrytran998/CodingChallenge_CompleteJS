@@ -1,0 +1,39 @@
+<html>
+
+<body>
+    <script language="javascript">
+        var windowChild = null;
+
+        function openWindow() {
+            windowChild = window.open('https://freetuts.net', "windowChild", "width=500, height=500");
+            return false;
+        }
+
+        function moveWindow() {
+            windowChild.moveTo(500, 100);
+            windowChild.focus();
+            return false;
+        }
+
+        function close() {
+            windowChild.close();
+            return false;
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1);
+                if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+            }
+            return "";
+        }
+    </script>
+    <a href="#" onclick="return openWindow()">Open</a>
+    <a href="#" onclick="return moveWindow()">Move</a>
+    <a href="#" onclick="return close()">Close</a>
+</body>
+
+</html>
